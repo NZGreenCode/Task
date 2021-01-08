@@ -162,8 +162,11 @@ export default class ManageJob extends React.Component {
             {key:1,text:'Newest First',value:'Newest First'},
             {key:2,text:'Oldest First', value:'Oldest First'},
         ]
-
-
+        // if(this.state.mycount='0')
+        // {
+        //     this.setState("<b>No jobs found </b>")
+        // }
+        console.log(this.state.mycount);
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
                <div className ="ui container">
@@ -187,46 +190,45 @@ export default class ManageJob extends React.Component {
                 options={SortOptions}
                 className='icon'/>
                 <br/><br/> 
-
-                            <Grid column={3}>
-                                <Grid.Row >
+                        <Grid column={3}>
+                            <Grid.Row >
                                 {this.state.loadJobs.map((MJob) => {
                                     return (
-                                    <Grid.Column className='jobcolumn' >
+                                        <Grid.Column className='jobcolumn' >
                                             <div className='ui segment'>
                                                 <div className='ui grid'>
                                                     <div className='ui row'>
                                                         <div className='ui sixteen column wide'>
-                                                                <div>
-                                                                    <h3>{MJob.title}</h3>
-                                                                    <p>{MJob.location.city}</p>
-                                                                    <p className="description job-summary">{MJob.summary}</p>
-                                                                </div>
-                                                                <Divider clearing></Divider>
-                                                                <div>
-                                                                    <Button color='red'>Expired</Button>
-                                                                    <Button.Group>
-                                                                        <Button basic color='blue'>Close</Button>
-                                                                        <Button basic color='blue'>Edit</Button>
-                                                                        <Button basic color='blue'>Copy</Button>
-                                                                    </Button.Group>
-                                                                </div>
+                                                            <div>
+                                                                <h3>{MJob.title}</h3>
+                                                                <a class="ui black right ribbon label"><Icon name='user'/>0</a>
+                                                                <p>{MJob.location.city}</p>
+                                                                <p className="description job-summary">{MJob.summary}</p>
+                                                            </div>
+                                                            <Divider clearing></Divider>
+                                                            <div>
+                                                                <Button color='red'>Expired</Button>
+                                                                <Button.Group>
+                                                                    <Button basic color='blue'><Icon name='close'/>Close</Button>
+                                                                    <Button basic color='blue'><Icon name='edit'/>Edit</Button>
+                                                                    <Button basic color='blue'><Icon name='copy'/>Copy</Button>
+                                                                </Button.Group>
+                                                            </div>
 
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                    </Grid.Column>
+                                        </Grid.Column>
                                     )
                                 })
                                 }
-                                </Grid.Row>
-                            </Grid>
-
+                            </Grid.Row><br /><br />
+                        </Grid>
                 <br/>
                 <br/><br/>
                </div>
-               <Pagination defaultActivePage={3} totalPages={5} />
+               <Pagination  defaultActivePage={3} totalPages={5} />
             </BodyWrapper>
             
         )

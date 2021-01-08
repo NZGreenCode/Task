@@ -1448,7 +1448,6 @@ div.ReactTags__selected a.ReactTags__remove {
 
 /*Manage Job - Start*/
 .description.job-summary {
-    max-height: 200px;
     min-height: 200px;
     min-width:200px;
     overflow-y: hidden;
@@ -1465,6 +1464,7 @@ div.ReactTags__selected a.ReactTags__remove {
 .jobcard{
 
    min-width:300px; 
+
 }
 
 .jobcolumn{
