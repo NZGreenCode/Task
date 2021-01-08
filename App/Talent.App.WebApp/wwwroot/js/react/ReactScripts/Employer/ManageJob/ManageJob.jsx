@@ -208,7 +208,7 @@ export default class ManageJob extends React.Component {
                                                             <Divider clearing></Divider>
                                                             <div>
                                                                 <Button color='red'>Expired</Button>
-                                                                <Button.Group>
+                                                                <Button.Group  floating='right'>
                                                                     <Button basic color='blue'><Icon name='close'/>Close</Button>
                                                                     <Button basic color='blue'><Icon name='edit'/>Edit</Button>
                                                                     <Button basic color='blue'><Icon name='copy'/>Copy</Button>
