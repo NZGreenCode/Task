@@ -15821,6 +15821,7 @@ ol.ui.horizontal.list,
 .ui.grid.segment {
     margin: 1rem 0em;
     border-radius: 0.28571429rem;
+    min-width:300px;
 }
 
 /* Table */
@@ -19971,7 +19972,8 @@ ol.ui.horizontal.list,
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
+    flex-direction: 
+    ;
     vertical-align: middle;
     -ms-flex-item-align: center !important;
     -ms-grid-row-align: center !important;

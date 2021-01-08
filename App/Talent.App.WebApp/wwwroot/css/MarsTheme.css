@@ -189,7 +189,7 @@
 }
 
 .ui.grid.explore-category img {
-    width: 55px;
+    width: 300px;
 }
 
 /* Seller profile form - START */
@@ -1450,6 +1450,7 @@ div.ReactTags__selected a.ReactTags__remove {
 .description.job-summary {
     max-height: 200px;
     min-height: 200px;
+    min-width:200px;
     overflow-y: hidden;
 }
 
@@ -1460,4 +1461,16 @@ div.ReactTags__selected a.ReactTags__remove {
 .ui.dropdown.manage-jobs{
     margin-bottom: 10px;
 }
+
+.jobcard{
+
+   min-width:300px; 
+}
+
+.jobcolumn{
+
+    min-width:500px; 
+  
+}
+
 /*Manage jobs - End*/
