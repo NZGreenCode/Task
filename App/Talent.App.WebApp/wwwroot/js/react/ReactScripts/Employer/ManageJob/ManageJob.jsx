@@ -5,7 +5,7 @@ import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Grid,Button,Divider} from 'semantic-ui-react';
+import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Grid,Button,Divider,Label} from 'semantic-ui-react';
 
 
 export default class ManageJob extends React.Component {
@@ -33,9 +33,10 @@ export default class ManageJob extends React.Component {
                 showUnexpired: true
             },
             totalPages: 1,
-            activeIndex: ""
+            activeIndex: "",
+            message1:""
         } 
-        // this.handlePageClick= this.handlePageClick.bind(this);  
+        //this.handlePageClick= this.handlePageClick.bind(this);  
         this.loadData = this.loadData.bind(this);
         this.init = this.init.bind(this);
         this.loadNewData = this.loadNewData.bind(this);
@@ -124,9 +125,14 @@ export default class ManageJob extends React.Component {
                       cardData:slice
                     
                     })
+
                 } 
                 else {
                     TalentUtil.notification.show(res.message, "error", null, null)
+                }
+                if(this.state.mycount=='0')
+                {
+                    this.setState({message1:"No Jobs found"})
                 }
             }.bind(this)
         })
@@ -162,10 +168,7 @@ export default class ManageJob extends React.Component {
             {key:1,text:'Newest First',value:'Newest First'},
             {key:2,text:'Oldest First', value:'Oldest First'},
         ]
-        // if(this.state.mycount='0')
-        // {
-        //     this.setState("<b>No jobs found </b>")
-        // }
+    
         console.log(this.state.mycount);
         return (
             <BodyWrapper reload={this.init} loaderData={this.state.loaderData}>
@@ -190,9 +193,12 @@ export default class ManageJob extends React.Component {
                 options={SortOptions}
                 className='icon'/>
                 <br/><br/> 
+                <h3>
+                {this.state.message1}
+                </h3>
                         <Grid column={3}>
                             <Grid.Row >
-                                {this.state.loadJobs.map((MJob) => {
+                            {this.state.loadJobs.map((MJob) => {
                                     return (
                                         <Grid.Column className='jobcolumn' >
                                             <div className='ui segment'>
@@ -228,7 +234,14 @@ export default class ManageJob extends React.Component {
                 <br/>
                 <br/><br/>
                </div>
-               <Pagination  defaultActivePage={3} totalPages={5} />
+               <span>
+               <Pagination  
+                defaultActivePage={3} 
+                totalPages={5} 
+                //onPageChange={this.handlePageClick}
+                //pageCount={this.state.pageCount}
+                />
+                </span>
             </BodyWrapper>
             
         )
