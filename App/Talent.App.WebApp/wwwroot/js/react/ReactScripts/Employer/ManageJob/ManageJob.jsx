@@ -17,6 +17,7 @@ export default class ManageJob extends React.Component {
         //console.log(loader)
         this.state = {
             loadJobs: [],
+            cardData:[],
             loaderData: loader,
             activePage: 1,
             offset: 0,
@@ -36,7 +37,7 @@ export default class ManageJob extends React.Component {
             activeIndex: "",
             message1:""
         } 
-        //this.handlePageClick= this.handlePageClick.bind(this);  
+        this.handlePageClick= this.handlePageClick.bind(this);  
         this.loadData = this.loadData.bind(this);
         this.init = this.init.bind(this);
         this.loadNewData = this.loadNewData.bind(this);
@@ -44,17 +45,17 @@ export default class ManageJob extends React.Component {
 
     };
 
-        // handlePageClick=(e)=> {
-        //         var selectedPage=e.selected;
-        //         var offset=selectedPage*this.state.perPage;
+        handlePageClick=(e)=> {
+                var selectedPage=e.selected;
+                var offset=selectedPage*this.state.perPage;
             
-        //         this.setState({
-        //         currentPage:selectedPage,
-        //         offset:offset
-        //         },  ()=>{
-        //             this.loadMoreData()
-        //         });
-        //     }
+                this.setState({
+                currentPage:selectedPage,
+                offset:offset
+                },  ()=>{
+                    this.loadMoreData()
+                });
+            }
 
             loadMoreData() {
 
@@ -198,7 +199,7 @@ export default class ManageJob extends React.Component {
                 </h3>
                         <Grid column={3}>
                             <Grid.Row >
-                            {this.state.loadJobs.map((MJob) => {
+                            {this.state.cardData.map((MJob) => {
                                     return (
                                         <Grid.Column className='jobcolumn' >
                                             <div className='ui segment'>
@@ -214,7 +215,7 @@ export default class ManageJob extends React.Component {
                                                             <Divider clearing></Divider>
                                                             <div>
                                                                 <Button color='red'>Expired</Button>
-                                                                <Button.Group  floating='right'>
+                                                                <Button.Group  class='Bright'>
                                                                     <Button basic color='blue'><Icon name='close'/>Close</Button>
                                                                     <Button basic color='blue'><Icon name='edit'/>Edit</Button>
                                                                     <Button basic color='blue'><Icon name='copy'/>Copy</Button>
@@ -234,14 +235,16 @@ export default class ManageJob extends React.Component {
                 <br/>
                 <br/><br/>
                </div>
-               <span>
+               <span >
                <Pagination  
                 defaultActivePage={3} 
                 totalPages={5} 
-                //onPageChange={this.handlePageClick}
-                //pageCount={this.state.pageCount}
+                onPageChange={this.handlePageClick}
+                pageCount={this.state.pageCount}
                 />
                 </span>
+                <br/>
+                <br/>
             </BodyWrapper>
             
         )
