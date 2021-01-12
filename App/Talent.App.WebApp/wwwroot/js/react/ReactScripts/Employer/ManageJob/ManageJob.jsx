@@ -5,8 +5,7 @@ import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Grid,Button,Divider,Label} from 'semantic-ui-react';
-
+import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Grid, Button, Divider, Label } from 'semantic-ui-react';
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -37,7 +36,7 @@ export default class ManageJob extends React.Component {
             activeIndex: "",
             message1:""
         } 
-        this.handlePageClick= this.handlePageClick.bind(this);  
+        // this.handlePageClick= this.handlePageClick.bind(this);  
         this.loadData = this.loadData.bind(this);
         this.init = this.init.bind(this);
         this.loadNewData = this.loadNewData.bind(this);
@@ -45,17 +44,21 @@ export default class ManageJob extends React.Component {
 
     };
 
-        handlePageClick=(e)=> {
-                var selectedPage=e.selected;
-                var offset=selectedPage*this.state.perPage;
+    handleClick(offset) {
+    this.setState({offset});
+  }
+
+        // handlePageClick=(e)=> {
+        //         var selectedPage=e.selected;
+        //         var offset=selectedPage*this.state.perPage;
             
-                this.setState({
-                currentPage:selectedPage,
-                offset:offset
-                },  ()=>{
-                    this.loadMoreData()
-                });
-            }
+        //         this.setState({
+        //         currentPage:selectedPage,
+        //         offset:offset
+        //         },  ()=>{
+        //             this.loadMoreData()
+        //         });
+        //     }
 
             loadMoreData() {
 
@@ -236,12 +239,10 @@ export default class ManageJob extends React.Component {
                 <br/><br/>
                </div>
                <span >
-               <Pagination  
-                defaultActivePage={3} 
-                totalPages={5} 
-                onPageChange={this.handlePageClick}
-                pageCount={this.state.pageCount}
-                />
+                    <Pagination
+                        defaultActivePage={5}
+                        totalPages={10}
+                    />
                 </span>
                 <br/>
                 <br/>
