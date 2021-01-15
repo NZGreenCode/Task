@@ -1496,12 +1496,12 @@ div.ReactTags__selected a.ReactTags__remove {
     outline: none;
   }
   .pagination > .active > a {
-    background-color: #0f1213;
-    border-color:  #0f1213;
+    background-color: blue;
+    border-color:  blue;
     color: #fff;
   }
   .pagination > li > a {
-    border: 1px solid  #0f1213;
+    border: 1px solid  blue;
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
@@ -1512,13 +1512,13 @@ div.ReactTags__selected a.ReactTags__remove {
   .pagination > .active > span:hover,
   .pagination > .active > a:focus,
   .pagination > .active > span:focus {
-    background-color:  #0f1213;
-    border-color: #0f1213;
+    background-color:  blue;
+    border-color: blue;
     outline: none;
   }
   .pagination > li > a,
   .pagination > li > span {
-    color:  #0f1213;
+    color:  blue;
   }
   .pagination > li:first-child > a,
   .pagination > li:first-child > span,
