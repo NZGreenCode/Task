@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup Label="Globals">
     <SccProjectName>SAK</SccProjectName>
@@ -14,6 +14,7 @@
 
 <PropertyGroup>
     <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+    <UserSecretsId>6a7c7033-ff00-42f6-a480-ca8196a53156</UserSecretsId>
 </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />

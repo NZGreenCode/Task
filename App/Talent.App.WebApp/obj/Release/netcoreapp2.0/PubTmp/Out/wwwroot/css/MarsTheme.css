@@ -1496,9 +1496,9 @@ div.ReactTags__selected a.ReactTags__remove {
     outline: none;
   }
   .pagination > .active > a {
-    background-color: rgb(71, 128, 233);
-    border-color:  rgb(71, 128, 233);
-    color: rgb(71, 128, 233);
+    background-color:  rgb(71, 128, 233);
+    border-color:   rgb(71, 128, 233);
+    color: #fff;
   }
   .pagination > li > a {
     border: 1px solid   rgb(71, 128, 233);
@@ -1513,7 +1513,7 @@ div.ReactTags__selected a.ReactTags__remove {
   .pagination > .active > a:focus,
   .pagination > .active > span:focus {
     background-color:   rgb(71, 128, 233);
-    border-color: rgb(71, 128, 233);
+    border-color:  rgb(71, 128, 233);
     outline: none;
   }
   .pagination > li > a,
@@ -1525,3 +1525,4 @@ div.ReactTags__selected a.ReactTags__remove {
   .pagination > li:last-child > a,
   .pagination > li:last-child > span {
     border-radius: unset;
+  }

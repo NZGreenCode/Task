@@ -33,3 +33,4 @@ C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\Talent.Common\obj\Debug\netc
 C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\Talent.Common\obj\Debug\netcoreapp2.0\Talent.Common.csproj.CoreCompileInputs.cache
 C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\Talent.Common\obj\Debug\netcoreapp2.0\Talent.Common.dll
 C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\Talent.Common\obj\Debug\netcoreapp2.0\Talent.Common.pdb
+C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\Talent.Common\obj\Debug\netcoreapp2.0\Talent.Common.csprojAssemblyReference.cache

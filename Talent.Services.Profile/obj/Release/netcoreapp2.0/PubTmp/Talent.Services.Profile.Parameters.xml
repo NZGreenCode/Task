@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="aswemp" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="TalentProfilet" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\aswan\\OneDrive\\Documents\\MyProjects\\Task_a\\Talent\.Services\.Profile\\obj\\Release\\netcoreapp2\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>
