@@ -1,11 +1,13 @@
 ﻿import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
 import LoggedInBanner from '../../Layout/Banner/LoggedInBanner.jsx';
 import { LoggedInNavigation } from '../../Layout/LoggedInNavigation.jsx';
 import { JobSummaryCard } from './JobSummaryCard.jsx';
 import { BodyWrapper, loaderData } from '../../Layout/BodyWrapper.jsx';
-import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Grid, Button, Divider, Label } from 'semantic-ui-react';
+import { Pagination, Icon, Dropdown, Checkbox, Accordion, Form, Segment, Grid, Button, Divider} from 'semantic-ui-react';
+import ReactPaginate from 'react-paginate';
 
 export default class ManageJob extends React.Component {
     constructor(props) {
@@ -15,10 +17,11 @@ export default class ManageJob extends React.Component {
         loader.allowedUsers.push("Recruiter");
         //console.log(loader)
         this.state = {
+            page: 2,
             loadJobs: [],
             cardData:[],
             loaderData: loader,
-            activePage: 1,
+            activePage: '',
             offset: 0,
             perPage:2,
             currentPage:0,
@@ -32,11 +35,12 @@ export default class ManageJob extends React.Component {
                 showExpired: true,
                 showUnexpired: true
             },
-            totalPages: 1,
             activeIndex: "",
-            message1:""
+            message1: ""
+
         } 
-        // this.handlePageClick= this.handlePageClick.bind(this);  
+        this.handlePageClick=this.handlePageClick.bind(this);
+        //  this.handleClick= this.handleClick.bind(this);  
         this.loadData = this.loadData.bind(this);
         this.init = this.init.bind(this);
         this.loadNewData = this.loadNewData.bind(this);
@@ -44,21 +48,40 @@ export default class ManageJob extends React.Component {
 
     };
 
-    handleClick(offset) {
-    this.setState({offset});
-  }
+    // handlePageChange({e, activePage }) {
+    //      this.setState({ activePage }) 
+    //      var selectedPage=e.selected;
+    //      var offset=selectedPage*this.state.perPage;
 
-        // handlePageClick=(e)=> {
-        //         var selectedPage=e.selected;
-        //         var offset=selectedPage*this.state.perPage;
+    //               this.setState({
+    //               currentPage:selectedPage,
+    //               offset:offset
+    //               },  ()=>{
+    //                   this.loadMoreData()
+    //               });
+    //     }
+
+
+    //handlePageClick=(event)=>{
+    //          var selectedPage = event.selected;
+    //              var offset=selectedPage*this.state.perPage;
+
+    //              this.setState({
+    //              currentPage:selectedPage,
+    //              offset:offset
+    //              });
+    //    }
+                handlePageClick(e) {
+                var selectedPage=e.selected;
+                var offset=selectedPage*this.state.perPage;
             
-        //         this.setState({
-        //         currentPage:selectedPage,
-        //         offset:offset
-        //         },  ()=>{
-        //             this.loadMoreData()
-        //         });
-        //     }
+                this.setState({
+                currentPage:selectedPage,
+                offset:offset
+                },  ()=>{
+                    this.loadMoreData()
+                });
+            }
 
             loadMoreData() {
 
@@ -159,7 +182,7 @@ export default class ManageJob extends React.Component {
     }
 
     render() {
-        
+        const {activePage} = this.state
         const {loadJobs}=this.state;
 
         const ShowOptions=[
@@ -218,7 +241,7 @@ export default class ManageJob extends React.Component {
                                                             <Divider clearing></Divider>
                                                             <div>
                                                                 <Button color='red'>Expired</Button>
-                                                                <Button.Group  class='Bright'>
+                                                                <Button.Group  className='Bright'>
                                                                     <Button basic color='blue'><Icon name='close'/>Close</Button>
                                                                     <Button basic color='blue'><Icon name='edit'/>Edit</Button>
                                                                     <Button basic color='blue'><Icon name='copy'/>Copy</Button>
@@ -237,13 +260,20 @@ export default class ManageJob extends React.Component {
                         </Grid>
                 <br/>
                 <br/><br/>
-               </div>
-               <span >
-                    <Pagination
-                        defaultActivePage={5}
-                        totalPages={10}
-                    />
-                </span>
+               <div className='Pcenter'>
+                <ReactPaginate
+                    breakLabel={'...'}
+                    breakClassName={'break-me'}
+                    pageCount={this.state.pageCount}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={this.handlePageClick}
+                    containerClassName={'pagination'}
+                    subContainerClassName={'pages pagination'}
+                    activeClassName={'active'}
+                />
+                </div>
+                </div>
                 <br/>
                 <br/>
             </BodyWrapper>
