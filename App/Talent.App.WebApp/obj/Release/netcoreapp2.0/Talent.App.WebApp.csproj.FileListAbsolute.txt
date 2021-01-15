@@ -13,3 +13,4 @@ C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\App\Talent.App.WebApp\obj\Re
 C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\App\Talent.App.WebApp\obj\Release\netcoreapp2.0\Talent.App.WebApp.dll
 C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\App\Talent.App.WebApp\obj\Release\netcoreapp2.0\Talent.App.WebApp.pdb
 C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\App\Talent.App.WebApp\obj\Release\netcoreapp2.0\Talent.App.WebApp.genruntimeconfig.cache
+C:\Users\aswan\OneDrive\Documents\MyProjects\Task_a\App\Talent.App.WebApp\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
