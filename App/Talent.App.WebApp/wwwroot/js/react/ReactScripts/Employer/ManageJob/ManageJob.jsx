@@ -227,7 +227,7 @@ export default class ManageJob extends React.Component {
                             <Grid.Row >
                             {this.state.cardData.map((MJob) => {
                                     return (
-                                        <Grid.Column className='jobcolumn' >
+                                        <Grid.Column style={{ width: "50%", borderRadius: "0" }} >
                                             <div className='ui segment'>
                                                 <div className='ui grid'>
                                                     <div className='ui row'>
